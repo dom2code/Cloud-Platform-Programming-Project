@@ -12,7 +12,7 @@ def create_app():
     application = Flask(__name__)
     application.config['SECRET_KEY'] = 'hjshjhdjah kjshkjdhjs'
     application.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
-    db.init_app(app)
+    db.init_application(application)
 
     from .views import views
     from .auth import auth
@@ -26,7 +26,7 @@ def create_app():
 
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'
-    login_manager.init_app(app)
+    login_manager.init_application(application)
 
     @login_manager.user_loader
     def load_user(id):
