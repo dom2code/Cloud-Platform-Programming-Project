@@ -9,7 +9,7 @@ views = Blueprint('views', __name__)
 @views.route('/')
 # @login_required
 def home():
-    return render_template("home.html")
+    return "<h1>hello this is a try</h1>"
 
 
 # # @views.route('/delete-note', methods=['POST'])
