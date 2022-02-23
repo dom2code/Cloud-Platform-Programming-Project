@@ -8,7 +8,7 @@ from flask import Blueprint
 auth = Blueprint('auth', __name__)
 
 
-# @auth.route('/login', methods=['GET', 'POST'])
+#  @auth.route('/login', methods=['GET', 'POST'])
 # def login():
 #     if request.method == 'POST':
 #         email = request.form.get('email')
@@ -26,6 +26,18 @@ auth = Blueprint('auth', __name__)
 #             flash('Email does not exist.', category='error')
 
 #     return render_template("login.html", user=current_user)
+
+@auth.route('/login')
+def login():
+    return "<p>LogIn</p>"
+
+@auth.route('/logout')
+def logout():
+    return "<p>LogOut</p>"
+
+@auth.route('/signup')
+def signup():
+    return "<p>Sign Up</p>"        
 
 
 # @auth.route('/logout')
